@@ -1,0 +1,14 @@
+Classification Problem :The data  provided represents US Census data. The modeling objective is to
+predict whether an individual’s salary is > $50K or <= $50K
+
+Model Used:CatboostClassifier
+Data size: (40935, 15)
+
+Data cleaning:
+1. Repleaced NAN's with -999
+2.Replaced space in front of data present in columns
+
+Obtained accuracy :86.4%
+Precision:.77
+Recall :.61
+
