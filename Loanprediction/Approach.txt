@@ -1,0 +1,18 @@
+1.Replaced missing value with -999 in both train and test files as there were many columns with missing data,dropping would result in missing large chunk of dataset,hence imputed with -999
+2.CODE_GENDER column contained XNA as values ,replaced with -999
+3.DAYS_BIRTH column contained negative value,it was replaced with Age column upon converting to years
+4.Derived features were added to important features identified using the algorithm (Lightgradient Boosting).Like 
+credittoAnnuityratio=AMT_CREDIT/AMT_ANNUITY,credittogoodsprice=AMT_CREDIT/AMT_GOODS_PRICE
+5.NAME_EDUCATION_TYPE column showed ordinality hence encoded accordingly.
+6.Original columns were dropped keeping the derived ones.
+7.DAYS_EMPLOYED contained 365243 as an ambigous value which was replaced with -999 in both train and test.
+8.One hot encoding was done for categorical data present,resulting in 247 total columns for training.
+9.Proceesed data was trained and cross validated using 5 folds.
+
+Tools Used:Google Colab
+Language:Python
+
+
+
+
+
