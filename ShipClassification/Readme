@@ -1,0 +1,8 @@
+Ship Classification challenge on Analytics Vidhya
+
+Train ,Validation,Test Size=5002, 1250, 2680
+
+Using Pytorch framework and its Fastai library for building classification model with pre trained model densenet121.
+
+Public score:.97
+Private Score:0.96
