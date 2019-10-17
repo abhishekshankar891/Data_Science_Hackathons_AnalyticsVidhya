@@ -1,0 +1,14 @@
+Problem Statement:Predicton of whether loan applicant will default or not
+Dataset Size:(257512, 122)->Train size
+(49999, 121)->Test Size
+
+Model Used:LightGradientBoosting
+F1 Score:.91
+
+Appraoch:
+Data cleaning:.Replaced NAN with -999
+EDA: Coorelation ,histogram and statistical description of dataset found
+Feature Engineering:Derived features like age from Days_birth columns,credittoAnnuityratio,credittogoodsprice,Replaced education level with more wieghts to higher qualification.
+
+Modelling:Build with 5 kfolds cross validation using LGB algorithm on dataset.
+
