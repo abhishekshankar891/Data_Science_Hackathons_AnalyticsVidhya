@@ -1,0 +1,43 @@
+JanataHack: Machine Learning for Banking
+
+The process, defined as ‘risk-based pricing’, uses a sophisticated algorithm that leverages different determining factors of a loan applicant. Selection of significant factors will help develop a prediction algorithm which can estimate loan interest rates based on clients’ information. On one hand, knowing the factors will help consumers and borrowers to increase their credit worthiness and place themselves in a better position to negotiate for getting a lower interest rate. On the other hand, this will help lending companies to get an immediate fixed interest rate estimation based on clients information. Here, your goal is to use a training dataset to predict the loan rate category (1 / 2 / 3) that will be assigned to each loan in our test set.
+
+Variable	Definition
+Loan_ID	A unique id for the loan.
+Loan_Amount_Requested	The listed amount of the loan applied for by the borrower.
+Length_Employed	Employment length in years
+Home_Owner	The home ownership status provided by the borrower during registration. Values are: Rent, Own, Mortgage, Other.
+Annual_Income	The annual income provided by the borrower during registration.
+Income_Verified	Indicates if income was verified, not verified, or if the income source was verified
+Purpose_Of_Loan	A category provided by the borrower for the loan request. 
+Debt_To_Income	A ratio calculated using the borrower’s total monthly debt payments on the total debt obligations, excluding mortgage and the requested loan, divided by the borrower’s self-reported monthly income.
+Inquiries_Last_6Mo	The number of inquiries by creditors during the past 6 months.
+Months_Since_Deliquency	The number of months since the borrower's last delinquency.
+Number_Open_Accounts	The number of open credit lines in the borrower's credit file.
+Total_Accounts	The total number of credit lines currently in the borrower's credit file
+Gender	Gender
+Interest_Rate	Target Variable: Interest Rate category (1/2/3) of the loan application
+
+Approach taken:
+EDA:
+
+Train.shape,Test.shape,Submission.shape ->((164309, 14), (109541, 13), (109541, 2))
+
+Null values filled with -999
+
+Ensemebled catboost,lgboost and XGboost. Xgboost having best performance was given highest weightage while insembling .
+Tried two ensemble combinations ->
+1. ensemble_preds_70_30_00 = 0.7 * pred_df_xgb + 0.3 * pred_df_cat + 0.0 * pred_df_lgb 
+2. ensemble_preds_70_25_05 = 0.7 * pred_df_xgb + 0.25 * pred_df_cat + 0.05 * pred_df_lgb
+
+First one resulted better as compared to second .
+
+F1 scores on public LB for both ensembles:
+1 ->0.535727430412421
+2->0.535590374087236
+
+Scope of improvement :
+Feature derivation 
+Dropping less significant features
+
+
